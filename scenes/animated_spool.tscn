@@ -1,0 +1,40 @@
+[gd_scene format=3 uid="uid://bqcuy3lwqyfy4"]
+
+[ext_resource type="Texture2D" uid="uid://bjllxaajn0haq" path="res://assets/spool-1.png" id="1_7g0ua"]
+[ext_resource type="Texture2D" uid="uid://kaqxnbdvhyfo" path="res://assets/spool-2.png" id="2_bnx7f"]
+[ext_resource type="Texture2D" uid="uid://ct8j76tvblj5m" path="res://assets/spool-3.png" id="3_2x5id"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_blhmb"]
+atlas = ExtResource("1_7g0ua")
+region = Rect2(0, 0, 209, 256)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qt83c"]
+atlas = ExtResource("2_bnx7f")
+region = Rect2(0, 0, 203, 248)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_315e8"]
+atlas = ExtResource("3_2x5id")
+region = Rect2(0, 0, 208, 245)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_dj5kw"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_blhmb")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_qt83c")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_315e8")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[node name="Node2D" type="Node2D" unique_id=1572199758]
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1897110606]
+sprite_frames = SubResource("SpriteFrames_dj5kw")
+autoplay = "default"
