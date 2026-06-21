@@ -1,0 +1,10 @@
+[gd_scene format=3 uid="uid://cc5xutgsjfnii"]
+
+[ext_resource type="Script" uid="uid://bn4eyndv7ns22" path="res://card_list.gd" id="1_cmdsa"]
+[ext_resource type="Script" uid="uid://m3vmt2rypv81" path="res://scenes/hand.gd" id="1_k7pjy"]
+
+[node name="Hand" type="Node2D" unique_id=760075762]
+script = ExtResource("1_k7pjy")
+
+[node name="CardList" type="Node2D" parent="." unique_id=190899388]
+script = ExtResource("1_cmdsa")

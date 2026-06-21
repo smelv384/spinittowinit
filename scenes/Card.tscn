@@ -1,0 +1,52 @@
+[gd_scene format=3 uid="uid://djbagsbdit7ke"]
+
+[ext_resource type="Script" uid="uid://blw87utaasv2x" path="res://scenes/card.gd" id="1_40ytf"]
+[ext_resource type="Script" uid="uid://dqhym518subai" path="res://scenes/button.gd" id="1_qf083"]
+[ext_resource type="Texture2D" uid="uid://dkpai8jbglc73" path="res://assets/card-4.png" id="2_40ytf"]
+[ext_resource type="FontFile" uid="uid://dwi048wsqsr7p" path="res://assets/ShaemmfulScript-Regular.ttf" id="3_5273u"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_kg30u"]
+atlas = ExtResource("2_40ytf")
+region = Rect2(0, 0, 241, 372)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_sy11y"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_kg30u")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[node name="Card" type="Node2D" unique_id=588610933]
+script = ExtResource("1_40ytf")
+
+[node name="Visuals" type="Node2D" parent="." unique_id=1586083946]
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Visuals" unique_id=1923049653]
+sprite_frames = SubResource("SpriteFrames_sy11y")
+
+[node name="Label" type="Label" parent="Visuals" unique_id=1338140036]
+offset_left = -79.0
+offset_top = -31.999998
+offset_right = -10.0
+offset_bottom = -8.999998
+scale = Vector2(2.559999, 2.559999)
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("3_5273u")
+text = "hello"
+
+[node name="Button" type="Button" parent="Visuals" unique_id=1955599634]
+offset_left = -121.0
+offset_top = -181.0
+offset_right = -76.0
+offset_bottom = -150.0
+scale = Vector2(5.280002, 11.840002)
+flat = true
+script = ExtResource("1_qf083")
+
+[connection signal="mouse_entered" from="Visuals/Button" to="." method="_on_button_mouse_entered"]
+[connection signal="mouse_exited" from="Visuals/Button" to="." method="_on_button_mouse_exited"]
+[connection signal="pressed" from="Visuals/Button" to="." method="_on_button_pressed"]

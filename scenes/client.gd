@@ -7,6 +7,7 @@ extends Node2D
 var current_face:int
 var happiness:int=0
 
+@onready var button: Button = $Button
 @onready var face := $Face
 
 func _ready():
@@ -31,7 +32,23 @@ func change_face(dir: int):
 # No bounds checking lmao
 func hover_happy():
 	face.texture=load(faces[current_face+1])
+	
 func hover_angry():
 	face.texture=load(faces[current_face-1])
+	
 func unhover():
 	face.texture=load(faces[current_face])
+
+func _on_card_enter_hover_state(multiplier: int) -> void:
+	if (multiplier > 0):
+		face.texture=load(faces[current_face+1])
+	elif (multiplier < 0):
+		face.texture=load(faces[current_face-1])
+
+
+func _on_card_exit_hover_state() -> void:
+	face.texture=load(faces[current_face])
+
+
+func _on_card_selected(multiplier: int) -> void:
+	change_happiness(multiplier)

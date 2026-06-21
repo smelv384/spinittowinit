@@ -1,0 +1,93 @@
+[gd_scene format=3 uid="uid://cykrw1bqpfhkq"]
+
+[ext_resource type="Script" uid="uid://c17dlub8fdt4r" path="res://scenes/slot_machine.gd" id="1_aa01d"]
+[ext_resource type="Texture2D" uid="uid://b33sp5iksjiim" path="res://assets/slot machine.png" id="1_xjw1r"]
+[ext_resource type="Texture2D" uid="uid://ddmutpdo2yijs" path="res://assets/slot machine intermediate 2.png" id="2_earev"]
+[ext_resource type="Texture2D" uid="uid://r7ty42cm8b1" path="res://assets/slot machine 2.png" id="2_yohb1"]
+[ext_resource type="Texture2D" uid="uid://bjsy15xl1166a" path="res://assets/slot machine intermediate 1.png" id="3_ls8sf"]
+[ext_resource type="Texture2D" uid="uid://q3ulkkvgudpi" path="res://assets/slot machine pushed 2.png" id="4_o4ud5"]
+[ext_resource type="Texture2D" uid="uid://bwyba37vt7erm" path="res://assets/slot machine pushed.png" id="5_ifgjw"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7y8nu"]
+atlas = ExtResource("2_earev")
+region = Rect2(0, 0, 322, 396)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_evat0"]
+atlas = ExtResource("3_ls8sf")
+region = Rect2(0, 0, 326, 396)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_bqnna"]
+atlas = ExtResource("4_o4ud5")
+region = Rect2(0, 0, 326, 396)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_r2xut"]
+atlas = ExtResource("5_ifgjw")
+region = Rect2(0, 0, 321, 388)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7scc5"]
+atlas = ExtResource("1_xjw1r")
+region = Rect2(0, 0, 321, 388)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2e0ow"]
+atlas = ExtResource("2_yohb1")
+region = Rect2(0, 0, 326, 396)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_puwce"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_7y8nu")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_evat0")
+}],
+"loop": true,
+"name": &"intermediate",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_bqnna")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_r2xut")
+}],
+"loop": true,
+"name": &"lever_pressed",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_7scc5")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2e0ow")
+}],
+"loop": true,
+"name": &"plain",
+"speed": 5.0
+}]
+
+[node name="SlotMachine" type="Node2D" unique_id=172359418]
+script = ExtResource("1_aa01d")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1791311711]
+sprite_frames = SubResource("SpriteFrames_puwce")
+animation = &"plain"
+autoplay = "plain"
+frame_progress = 0.7089825
+
+[node name="Button" type="Button" parent="AnimatedSprite2D" unique_id=306575274]
+offset_left = -163.0
+offset_top = -198.0
+offset_right = -153.0
+offset_bottom = -188.0
+scale = Vector2(27.633568, 39.62937)
+flat = true
+
+[node name="Timer" type="Timer" parent="." unique_id=1950221068]
+one_shot = true
+
+[connection signal="button_down" from="AnimatedSprite2D/Button" to="." method="_on_button_button_down"]
+[connection signal="button_up" from="AnimatedSprite2D/Button" to="." method="_on_button_button_up"]
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
