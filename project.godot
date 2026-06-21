@@ -11,8 +11,13 @@ config_version=5
 [application]
 
 config/name="spinittowinit"
+run/main_scene="uid://dsmf8bxakf02x"
 config/features=PackedStringArray("4.6", "Forward Plus")
 config/icon="res://icon.svg"
+
+[display]
+
+window/stretch/mode="viewport"
 
 [physics]
 
