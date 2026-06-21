@@ -1,0 +1,43 @@
+[gd_scene format=3 uid="uid://3571ru6h4023"]
+
+[ext_resource type="Texture2D" uid="uid://myfw56fao762" path="res://assets/viewport.png" id="1_gra7k"]
+[ext_resource type="Script" uid="uid://bodgghymvbk85" path="res://scenes/client.gd" id="1_j1uaq"]
+[ext_resource type="Texture2D" uid="uid://cwbctwpbg2qpv" path="res://assets/Suit torso.png" id="2_j1uaq"]
+[ext_resource type="Texture2D" uid="uid://uxwsbekcvguj" path="res://assets/Background.png" id="3_65su7"]
+[ext_resource type="Texture2D" uid="uid://csfcbxs7af0sh" path="res://assets/Desk top.png" id="4_ybyph"]
+
+[node name="Client" type="Node2D" unique_id=2118541271]
+script = ExtResource("1_j1uaq")
+faces = Array[String](["uid://b6ep5y6kct3m3", "uid://sbbvwe4v4nqd", "uid://daar4bkvgw6cs", "uid://csadu8hi2lp6o", "uid://cu23csvtxj8cr", "uid://dnjiy43qqss0i", "uid://o18l04ncti71"])
+breakpoints = Array[int]([-175, -125, -75, -25, 25, 75, 125, 175])
+default_face = 3
+
+[node name="Viewport" type="Sprite2D" parent="." unique_id=1251225630]
+z_index = 256
+texture_filter = 1
+position = Vector2(-1.4891357, -58.99999)
+scale = Vector2(3.9773798, 3.1956522)
+texture = ExtResource("1_gra7k")
+
+[node name="SuitTorso" type="Sprite2D" parent="." unique_id=966885895]
+z_index = 1
+texture_filter = 1
+position = Vector2(-1, -39)
+texture = ExtResource("2_j1uaq")
+
+[node name="Background" type="Sprite2D" parent="." unique_id=1682286808]
+texture_filter = 1
+position = Vector2(-4.999996, -46)
+scale = Vector2(2.3196564, 2.3196564)
+texture = ExtResource("3_65su7")
+
+[node name="DeskTop" type="Sprite2D" parent="." unique_id=406170902]
+z_index = 2
+position = Vector2(-2.0882244, 49.5)
+scale = Vector2(2.273719, 1.9705882)
+texture = ExtResource("4_ybyph")
+
+[node name="Face" type="Sprite2D" parent="." unique_id=147786680]
+z_index = 3
+position = Vector2(6, -113)
+scale = Vector2(0.761111, 0.7611112)
