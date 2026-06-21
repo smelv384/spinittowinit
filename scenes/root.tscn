@@ -7,20 +7,6 @@
 
 [node name="Camera2D" type="Camera2D" unique_id=1384002051]
 
-[node name="Button" type="Button" parent="." unique_id=1605488120]
-offset_left = 29.0
-offset_top = 21.0
-offset_right = 188.0
-offset_bottom = 75.0
-text = "+ Happy"
-
-[node name="Button2" type="Button" parent="." unique_id=490838571]
-offset_left = -242.0
-offset_top = 21.0
-offset_right = -78.0
-offset_bottom = 78.0
-text = "- Happy"
-
 [node name="Client" parent="." unique_id=2118541271 instance=ExtResource("3_lrqlo")]
 position = Vector2(-28, -93)
 
@@ -36,12 +22,6 @@ scale = Vector2(0.3599987, 0.3599987)
 position = Vector2(232, 189)
 scale = Vector2(0.52000004, 0.52000004)
 
-[connection signal="mouse_entered" from="Button" to="Client" method="hover_happy"]
-[connection signal="mouse_exited" from="Button" to="Client" method="unhover"]
-[connection signal="pressed" from="Button" to="Client" method="change_happiness" binds= [10]]
-[connection signal="mouse_entered" from="Button2" to="Client" method="hover_angry"]
-[connection signal="mouse_exited" from="Button2" to="Client" method="unhover"]
-[connection signal="pressed" from="Button2" to="Client" method="change_happiness" binds= [-10]]
 [connection signal="generate_cards" from="SlotMachine" to="Hand" method="_on_slot_machine_generate_cards"]
 [connection signal="enter_hover_state" from="Hand" to="Client" method="_on_hand_enter_hover_state"]
 [connection signal="exit_hover_state" from="Hand" to="Client" method="_on_hand_exit_hover_state"]
