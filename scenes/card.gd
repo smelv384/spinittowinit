@@ -16,11 +16,13 @@ signal exit_hover_state
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
+	add_child(label)
 	label.text = word
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
+	label.text = word
 	if hoverState:
 		visuals.position.y = move_toward(visuals.position.y, SELECTED_POSITION_Y, LERP_SMOOTHING)
 	else:
@@ -28,11 +30,9 @@ func _process(delta: float) -> void:
 
 func set_word(new_word: String) -> void:
 	word = new_word
-	label.text = new_word
 	
 func set_multiplier(new_multiplier: int) -> void:
 	multiplier = new_multiplier
-
 
 func _on_button_mouse_entered() -> void:
 	hoverState = true
@@ -44,3 +44,4 @@ func _on_button_mouse_exited() -> void:
 
 func _on_button_pressed() -> void:
 	selected.emit(multiplier)
+	queue_free()

@@ -2,9 +2,18 @@
 
 [ext_resource type="Script" uid="uid://bn4eyndv7ns22" path="res://card_list.gd" id="1_cmdsa"]
 [ext_resource type="Script" uid="uid://m3vmt2rypv81" path="res://scenes/hand.gd" id="1_k7pjy"]
+[ext_resource type="PackedScene" uid="uid://djbagsbdit7ke" path="res://scenes/Card.tscn" id="3_k7pjy"]
 
 [node name="Hand" type="Node2D" unique_id=760075762]
 script = ExtResource("1_k7pjy")
 
 [node name="CardList" type="Node2D" parent="." unique_id=190899388]
 script = ExtResource("1_cmdsa")
+
+[node name="Card" parent="CardList" unique_id=588610933 instance=ExtResource("3_k7pjy")]
+visible = false
+
+[connection signal="enter_hover_state" from="CardList/Card" to="." method="_on_card_enter_hover_state"]
+[connection signal="exit_hover_state" from="CardList/Card" to="." method="_on_card_exit_hover_state"]
+[connection signal="selected" from="CardList/Card" to="." method="_on_card_selected"]
+[connection signal="selected" from="CardList/Card" to="CardList" method="_on_card_selected"]

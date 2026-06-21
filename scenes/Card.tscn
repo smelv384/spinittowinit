@@ -29,14 +29,15 @@ script = ExtResource("1_40ytf")
 sprite_frames = SubResource("SpriteFrames_sy11y")
 
 [node name="Label" type="Label" parent="Visuals" unique_id=1338140036]
-offset_left = -79.0
-offset_top = -31.999998
-offset_right = -10.0
-offset_bottom = -8.999998
-scale = Vector2(2.559999, 2.559999)
+offset_left = -96.0
+offset_top = -120.0
+offset_right = -27.0
+offset_bottom = -97.0
+scale = Vector2(2.4800007, 2.6399994)
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = ExtResource("3_5273u")
 text = "hello"
+autowrap_mode = 2
 
 [node name="Button" type="Button" parent="Visuals" unique_id=1955599634]
 offset_left = -121.0

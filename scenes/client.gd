@@ -39,16 +39,14 @@ func hover_angry():
 func unhover():
 	face.texture=load(faces[current_face])
 
-func _on_card_enter_hover_state(multiplier: int) -> void:
+func _on_hand_enter_hover_state(multiplier: int) -> void:
 	if (multiplier > 0):
 		face.texture=load(faces[current_face+1])
 	elif (multiplier < 0):
 		face.texture=load(faces[current_face-1])
 
-
-func _on_card_exit_hover_state() -> void:
+func _on_hand_exit_hover_state(multiplier: int) -> void:
 	face.texture=load(faces[current_face])
 
-
-func _on_card_selected(multiplier: int) -> void:
+func _on_hand_selected(multiplier: int) -> void:
 	change_happiness(multiplier)
