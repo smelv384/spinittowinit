@@ -12,17 +12,17 @@ scale = Vector2(0.5397196, 0.5397195)
 texture = ExtResource("3_jh1ax")
 
 [node name="Button" type="Button" parent="." unique_id=1605488120]
-offset_left = 33.0
-offset_top = 74.0
-offset_right = 374.0
-offset_bottom = 238.0
+offset_left = 29.0
+offset_top = 21.0
+offset_right = 188.0
+offset_bottom = 75.0
 text = "+ Happy"
 
 [node name="Button2" type="Button" parent="." unique_id=490838571]
-offset_left = -362.0
-offset_top = 71.0
-offset_right = -21.0
-offset_bottom = 235.0
+offset_left = -242.0
+offset_top = 21.0
+offset_right = -78.0
+offset_bottom = 78.0
 text = "- Happy"
 
 [node name="Client" parent="." unique_id=2118541271 instance=ExtResource("3_lrqlo")]

@@ -8,9 +8,9 @@
 
 [node name="Client" type="Node2D" unique_id=2118541271]
 script = ExtResource("1_j1uaq")
-faces = Array[String](["uid://sbbvwe4v4nqd", "uid://daar4bkvgw6cs", "uid://csadu8hi2lp6o", "uid://cu23csvtxj8cr", "uid://dnjiy43qqss0i"])
-breakpoints = Array[int]([-125, -75, -25, 25, 75, 125])
-default_face = 2
+faces = Array[String](["uid://b6ep5y6kct3m3", "uid://sbbvwe4v4nqd", "uid://daar4bkvgw6cs", "uid://csadu8hi2lp6o", "uid://cu23csvtxj8cr", "uid://dnjiy43qqss0i", "uid://o18l04ncti71"])
+breakpoints = Array[int]([-175, -125, -75, -25, 25, 75, 125, 175])
+default_face = 3
 
 [node name="Viewport" type="Sprite2D" parent="." unique_id=1251225630]
 z_index = 256
